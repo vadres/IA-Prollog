@@ -1,0 +1,15 @@
+%% BANCO RELACIONAL %%
+%produto(NOME, FORNECEDOR, QTY, DATA).
+produto(tomate, jose, 20, 20/10).
+produto(feijao, joao, 10, 21/10).
+produto(arroz, antonio, 40, 20/10).
+produto(sal, maria, 3, 21/10).
+produto(acucar, ana, 5, 20/10).
+produto(copos, jose, 1000, 20/10).
+produto(pratos, maria, 100, 21/10).
+
+%fornecedor(NOME, FONE, END).
+fornecedor(jose, 1503, rua5).
+fornecedor(antonio, 1402, rua21).
+
+bFindall(RESP) :- findall(prod(N,F), (produto(N, F, _, Dt), Dt = 21/10), RESP).

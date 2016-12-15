@@ -31,7 +31,4 @@ remDup([A|As], [A|Ns]) :- \+ member(A, As), remDup(As, Ns).
 remUa(L, LU) :- append(LU, [_], L).
 
 maxL([], 0).
-maxL([X|Xs], M) :- maxL(Xs, M1), (X > M1, M = X; X =< M1, M = M1).
-
-pertence(X, L, Flag) :- member(X,L), Flag = true.
-pertence(X, L, Flag) :- \+ member(X,L), Flag = false.
+maxL([X|Xs], M) :- maxL(Xs, M), X > M, M = X.
